@@ -1,6 +1,5 @@
 Link for working website  https://react-pizza-v2-livid.vercel.app/
 
-Link for partially working website https://doczzzmega.github.io/react-pizza-v2/
 
 # Getting Started with Create React App
 
