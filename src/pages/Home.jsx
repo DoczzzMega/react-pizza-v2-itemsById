@@ -81,7 +81,7 @@ function Home() {
 
         {(!isLoading && !notFound) && itemsCrop.map((obj, i) => <PizzaBlock key={obj.id} {...obj} />)}
 
-        {notFound && null}
+        {notFound && <span style={{fontSize: 38}}>Таких пицц не найдено :(</span>}
       </div>
       <Pagination itemsCount={items.length} pageSize={pageSize} />
     </div>
