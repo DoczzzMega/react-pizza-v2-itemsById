@@ -77,7 +77,9 @@ const cartSlice = createSlice({
         },
         clearItems(state) {
             state.items = [];
-            state.itemsById = {};
+            for (let i = 0; i < 10; i++) {
+                state.itemsById[i] = [];
+            }
             state.totalPrice = 0;
             state.totalCount = 0;
         }
