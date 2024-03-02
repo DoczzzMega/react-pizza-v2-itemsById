@@ -15,8 +15,26 @@ function Cart() {
   };
 
   let arrInArr = Object.values(itemsById);
-  let newArr = [];
-  arrInArr.forEach((item) => item.forEach((innerItem) => newArr.push(innerItem)));
+  let gloArr = [];
+  arrInArr.forEach((item) => item.forEach((innerItem) => gloArr.push(innerItem)));
+
+  if (totalPrice === 0) {
+    return (
+      <div className="container container--cart">
+          <div className="cart cart--empty">
+            <h2>Корзина пустая <span>😕</span></h2>
+            <p style={{fontSize: 20}}>
+              Вероятней всего, вы не заказывали ещё пиццу.<br/>
+              Для того, чтобы заказать пиццу, перейди на главную страницу.
+            </p>
+            <img src="./img/empty-cart.png" alt="Empty cart"/>
+            <a href="/" className="button button--black">
+              <span>Вернуться назад</span>
+            </a>
+          </div>
+        </div>
+    );
+  }
 
   return (
     <div className="container container--cart">
@@ -98,8 +116,8 @@ function Cart() {
         <div className="content__items">
           {
             // items.map(item => <CartItem key={uuidv4()}  {...item} />)
-            newArr.map((item) => (
-              <CartItem key={uuidv4()} {...item} />
+            gloArr.map((item) => (
+              <CartItem key={`${item.id}${item.type}${item.syze}`} {...item} />
             ))
           }
         </div>

@@ -23,12 +23,8 @@ function PizzaBlock({ id, title, price, imageUrl, sizes, types }) {
     dispatch(addItem(item));
   };
 
-  const arrOfItems = useSelector((state) => state.cart.itemsById[id]);
-  let count = arrOfItems.reduce((sum, obj) => {
-    return obj.count + sum;
-  }, 0);
-
-  const addedCount = arrOfItems ? count : 0;
+  const arrOfItemsById = useSelector((state) => state.cart.itemsById[id]);
+  let addedCount = arrOfItemsById ? arrOfItemsById.reduce((sum, obj) => obj.count + sum, 0) : 0;
 
   return (
     <div className="pizza-block">
