@@ -117,8 +117,7 @@ function Cart() {
           {
             // items.map(item => <CartItem key={uuidv4()}  {...item} />)
             gloArr.map((item) => (
-              // <CartItem key={`${item.id}${item.type}${item.syze}`} {...item} />
-              <CartItem key={uuidv4()} {...item} />
+              <CartItem key={`${item.id}${item.type}${item.syze}`} {...item} />
             ))
           }
         </div>
