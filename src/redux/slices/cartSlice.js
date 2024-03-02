@@ -20,7 +20,9 @@ const cartSlice = createSlice({
                 findItem.count++;
             }
             else {
-                state.itemsById[id] = [];
+                if (!Array.isArray(state.itemsById[id])) {
+                    state.itemsById[id] = [];
+                }
                 state.itemsById[id].push({ ...action.payload, count: 1, });
             }
 
